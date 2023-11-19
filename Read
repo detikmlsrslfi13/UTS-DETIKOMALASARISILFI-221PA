@@ -1,0 +1,8 @@
+<?php
+$sql = "SELECT * FROM topi";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$topi = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+echo json_encode($topi);
+?>
