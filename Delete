@@ -1,0 +1,9 @@
+<?php
+$idToDelete = $_POST['id_to_delete'];
+
+$sql = "DELETE FROM topi WHERE id=:id";
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(':id', $idToDelete);
+
+$stmt->execute();
+?>
