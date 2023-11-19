@@ -1,0 +1,15 @@
+<?php
+$id = $_POST['id'];
+$newModel = $_POST['new_model'];
+$newHarga = $_POST['new_harga'];
+$newDeskripsi = $_POST['new_deskripsi'];
+
+$sql = "UPDATE topi SET model=:model, harga=:harga, deskripsi=:deskripsi WHERE id=:id";
+$stmt = $conn->prepare($sql);
+$stmt->bindParam(':id', $id);
+$stmt->bindParam(':model', $newModel);
+$stmt->bindParam(':harga', $newHarga);
+$stmt->bindParam(':deskripsi', $newDeskripsi);
+
+$stmt->execute();
+?>
